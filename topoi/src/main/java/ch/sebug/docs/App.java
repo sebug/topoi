@@ -1,9 +1,5 @@
 package ch.sebug.docs;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
     public static void main( String[] args )
@@ -12,6 +8,7 @@ public class App
             System.err.println("Usage: ch.sebug.docs.app input.docx output.pdf");
             System.exit(1);
         }
-        System.out.println( "Converting..." );
+        var converter = new WordToPDF();
+        converter.ConvertToPDF(args[0], args[1]);
     }
 }
