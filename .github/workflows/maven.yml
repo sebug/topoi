@@ -33,12 +33,8 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn clean compile assembly:single
-    - name: List targets
-      run: ls target
-    - name: Print working directory
-      run: pwd
     - name: Upload Artifacts
       uses: actions/upload-artifact@v3
       with:
         name: topoi
-        path: ${{ github.workspace }}/target/topoi-1.0-SNAPSHOT-jar-with-dependencies.jar
+        path: topoi/target/topoi-1.0-SNAPSHOT-jar-with-dependencies.jar
